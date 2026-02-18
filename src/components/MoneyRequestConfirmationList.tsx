@@ -1333,7 +1333,7 @@ function MoneyRequestConfirmationList({
                 onSelectRow={navigateToParticipantPage}
                 shouldSingleExecuteRowSelect
                 shouldPreventDefaultFocusOnSelectRow
-                showListEmptyContent={false}
+                shouldShowListEmptyContent={false}
                 footerContent={footerContent}
                 listFooterContent={listFooterContent}
                 style={selectionListStyle}

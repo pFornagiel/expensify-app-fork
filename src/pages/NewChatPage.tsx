@@ -511,7 +511,7 @@ function NewChatPage({ref}: NewChatPageProps) {
                 }}
                 rightHandSideComponent={itemRightSideComponent}
                 footerContent={footerContent}
-                showLoadingPlaceholder={!areOptionsInitialized}
+                shouldShowLoadingPlaceholder={!areOptionsInitialized}
                 shouldPreventDefaultFocusOnSelectRow={!canUseTouchScreen()}
                 isLoadingNewOptions={!!isSearchingForReports || isLoadingMore}
                 onEndReached={handleEndReached}
