@@ -1,5 +1,4 @@
 import type {RouteProp} from '@react-navigation/native';
-import {useNavigationState} from '@react-navigation/native';
 import type {StackCardInterpolationProps} from '@react-navigation/stack';
 import React, {memo, useEffect, useRef, useState} from 'react';
 import ComposeProviders from '@components/ComposeProviders';
@@ -25,6 +24,7 @@ import useCurrentUserPersonalDetails from '@hooks/useCurrentUserPersonalDetails'
 import useOnboardingFlowRouter from '@hooks/useOnboardingFlow';
 import useOnyx from '@hooks/useOnyx';
 import useResponsiveLayout from '@hooks/useResponsiveLayout';
+import useRootNavigationState from '@hooks/useRootNavigationState';
 import {SidebarOrderedReportsContextProvider} from '@hooks/useSidebarOrderedReports';
 import useStyleUtils from '@hooks/useStyleUtils';
 import useTheme from '@hooks/useTheme';
@@ -165,7 +165,7 @@ function AuthScreens() {
 
     // Check if the user is currently on a 2FA setup screen
     // We can't rely on useRoute in this component because we're not a child of a Navigator, so we must sift through nav state by hand
-    const isIn2FASetupFlow = useNavigationState((state) => {
+    const isIn2FASetupFlow = useRootNavigationState((state) => {
         const focusedScreenName = getDeepestFocusedScreenName(state);
         return isTwoFactorSetupScreen(focusedScreenName);
     });
